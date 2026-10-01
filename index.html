@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神秘代码寻宝 | 新手ARG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔮 神秘代码寻宝</h1>
+            <p class="subtitle">一个适合新手的互动ARG体验</p>
+        </header>
+
+        <!-- 关卡 0：欢迎 -->
+        <section id="level-0" class="level active">
+            <div class="card">
+                <h2>欢迎，探险者</h2>
+                <p>你收到一封匿名邮件：</p>
+                <blockquote>
+                    「我把数字宝藏藏在了这片网络中。<br>
+                    只有真正的解谜者才能找到它。<br>
+                    第一道门就在眼前——仔细看看这个页面的源代码。」
+                </blockquote>
+                <p class="hint">💡 提示：在浏览器中右键 →「查看网页源代码」，或者按 Ctrl+U / Cmd+Option+U</p>
+                <div class="input-group">
+                    <input type="text" id="password-0" placeholder="输入你在源代码中找到的密码">
+                    <button onclick="checkLevel0()">解锁第一道门</button>
+                </div>
+                <p id="msg-0" class="message"></p>
+            </div>
+        </section>
+
+        <!-- 关卡 1 -->
+        <section id="level-1" class="level">
+            <div class="card">
+                <h2>第一关：字母迷宫</h2>
+                <p>恭喜你通过了第一道门！现在面对一个打乱的单词：</p>
+                <div class="puzzle-box">
+                    <p class="scrambled">「 藏宝图 」被打乱成了：</p>
+                    <p class="big-text">宝图藏</p>
+                </div>
+                <p>请把这三个字重新排列成正确的词语（提示：和「地图」有关）</p>
+                <div class="input-group">
+                    <input type="text" id="password-1" placeholder="输入正确的词语">
+                    <button onclick="checkLevel1()">提交答案</button>
+                </div>
+                <p id="msg-1" class="message"></p>
+            </div>
+        </section>
+
+        <!-- 关卡 2 -->
+        <section id="level-2" class="level">
+            <div class="card">
+                <h2>第二关：数字密码</h2>
+                <p>你找到了藏宝图的一角。上面写着：</p>
+                <div class="puzzle-box">
+                    <p>「把下面这串数字，按规律补全最后一个数字」</p>
+                    <p class="big-text">2 → 4 → 8 → 16 → ?</p>
+                </div>
+                <p class="hint">💡 每一项都是前一项的两倍</p>
+                <div class="input-group">
+                    <input type="number" id="password-2" placeholder="输入下一个数字">
+                    <button onclick="checkLevel2()">提交答案</button>
+                </div>
+                <p id="msg-2" class="message"></p>
+            </div>
+        </section>
+
+        <!-- 关卡 3 -->
+        <section id="level-3" class="level">
+            <div class="card">
+                <h2>第三关：隐藏的颜色</h2>
+                <p>宝藏就在附近了！页面上有一个隐藏的线索……</p>
+                <div class="color-puzzle">
+                    <p>把鼠标移到下面的方块上，看看会发生什么：</p>
+                    <div class="color-box" id="colorBox"></div>
+                    <p class="hint">💡 仔细观察颜色变化后出现的文字</p>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="password-3" placeholder="输入你看到的词语">
+                    <button onclick="checkLevel3()">提交答案</button>
+                </div>
+                <p id="msg-3" class="message"></p>
+            </div>
+        </section>
+
+        <!-- 最终宝藏 -->
+        <section id="level-final" class="level">
+            <div class="card treasure">
+                <h2>🎉 恭喜你找到了数字宝藏！</h2>
+                <div class="treasure-box">
+                    <p class="big-text">✨ 你成功完成了新手ARG挑战 ✨</p>
+                    <p>真正的宝藏不是金银，而是<strong>解谜的乐趣</strong>与<strong>好奇心</strong>。</p>
+                    <p>你已经具备了探索更复杂ARG的基础能力！</p>
+                    <hr>
+                    <p class="final-msg">分享这个页面给朋友，一起挑战吧～</p>
+                    <button onclick="restart()">再玩一次</button>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>适合新手的简易ARG · 纯前端实现 · 无任何真实账号风险</p>
+        </footer>
+    </div>
+
+    <!-- 隐藏在源代码中的密码提示 -->
+    <!-- 第一关密码是：ARG新手 -->
+    <script src="script.js"></script>
+</body>
+</html>
